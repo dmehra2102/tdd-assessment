@@ -22,20 +22,20 @@ jobs:
 
       - name: Install dependencies for Javascript-implementation
         run: |
-          cd .\javascript-implementation\
+          cd javascript-implementation
           npm install
 
       - name: Run tests for Javascript-implementation
         run: |
-          cd .\javascript-implementation\
+          cd javascript-implementation
           npm run test
 
       - name: Install dependencies for typescript-implementation
         run: |
-          cd .\typescript-implementation\
+          cd typescript-implementation
           npm install
 
       - name: Run tests for typescript-implementation
         run: |
-          cd .\typescript-implementation\
+          cd typescript-implementation
           npm run test
