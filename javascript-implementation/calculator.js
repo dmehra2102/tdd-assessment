@@ -12,6 +12,7 @@ class StringCalculator {
     }
 
     const numArr = newString.split(delimiters).map(Number);
+
     return numArr.reduce((acc, curValue) => acc + curValue, 0);
   }
 }

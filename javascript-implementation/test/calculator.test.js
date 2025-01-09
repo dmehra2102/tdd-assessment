@@ -30,5 +30,14 @@ describe("A String calculator", () => {
     });
   });
 
-  describe("an invalid string input", () => {});
+  describe("an invalid string input", () => {
+    test("should throw an exception for negative numbers", () => {
+      expect(() => calculator.add("1,-2,3")).toThrow(
+        "negatives not allowed: -2"
+      );
+      expect(() => calculator.add("//;\n1;-2;3;-6;-5")).toThrow(
+        "negatives not allowed: -2, -6, -5"
+      );
+    });
+  });
 });
