@@ -17,6 +17,11 @@ describe("A String calculator", () => {
     test("should return the sum of all the numbers present inside string seprated by comma", () => {
       expect(calculator.add("1,3,4,5,2,6,8,9,1")).toBe(39);
     });
+
+    test("should handle new lines between numbers", () => {
+      expect(calculator.add("1\n2,3")).toBe(6);
+      expect(calculator.add("1\n2\n3")).toBe(6);
+    });
   });
 
   describe("an invalid string input", () => {});
