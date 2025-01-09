@@ -12,6 +12,10 @@ class StringCalculator {
     }
 
     const numArr = newString.split(delimiters).map(Number);
+    const negativeNum = numArr.filter((num) => num < 0);
+    if (negativeNum.length > 0) {
+      throw new Error(`negatives not allowed: ${negativeNum.join(", ")}`);
+    }
 
     return numArr.reduce((acc, curValue) => acc + curValue, 0);
   }
