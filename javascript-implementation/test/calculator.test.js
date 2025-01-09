@@ -1,3 +1,5 @@
+const calculator = require("../calculator");
+
 describe("A String calculator", () => {
   describe("a valid string input", () => {});
 

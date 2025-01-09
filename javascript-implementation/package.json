@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "dev": "node main.js",
+    "dev": "node calculator.js",
     "test": "jest"
   },
   "keywords": [],
