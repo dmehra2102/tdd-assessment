@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --verbose",
+    "test": "jest --verbose",
     "build" : "tsc",
     "dev": "npm run build && node dist/calculator.js"
   },

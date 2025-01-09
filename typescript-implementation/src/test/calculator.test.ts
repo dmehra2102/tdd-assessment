@@ -1,3 +1,5 @@
+import { calculator } from "../calculator";
+
 describe("A String calculator in typescript", () => {
   describe("a valid string input", () => {
     test("should return 0 for an empty string", () => {
