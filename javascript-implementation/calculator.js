@@ -1,5 +1,5 @@
 class StringCalculator {
-  add(numbers) {
+  add(string) {
     return 0;
   }
 }

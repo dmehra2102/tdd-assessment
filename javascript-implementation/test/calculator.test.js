@@ -1,11 +1,19 @@
 const calculator = require("../calculator");
 
 describe("A String calculator", () => {
-  describe("a valid string input", () => {});
-
-  describe("an invalid string input", () => {
+  describe("a valid string input", () => {
     test("should return 0 for an empty string", () => {
       expect(calculator.add("")).toBe(0);
     });
+
+    test("should return the number itself if there is only one number", () => {
+      expect(calculator.add("1")).toBe(1);
+    });
+
+    test("should return the sum of two numbers separated by a comma", () => {
+      expect(calculator.add("1,2")).toBe(3);
+    });
   });
+
+  describe("an invalid string input", () => {});
 });
