@@ -1,0 +1,44 @@
+name: CI-test
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies for Javascript-implementation
+        run: |
+          cd Javascript-implementation
+          npm install
+
+      - name: Run tests for Javascript-implementation
+        run: |
+          cd Javascript-implementation
+          npm run test
+
+      - name: Install dependencies for typescript-implementation
+        run: |
+          cd typescript-implementation
+          npm install
+
+      - name: Run tests for typescript-implementation
+        run: |
+          cd typescript-implementation
+          npm run test
