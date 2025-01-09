@@ -28,6 +28,11 @@ describe("A String calculator", () => {
       expect(calculator.add("//;\n1;2;3;4;6")).toBe(16);
       expect(calculator.add("//?\n1?2?3?4?6")).toBe(16);
     });
+
+    test("should ignore numbers bigger than 1000", () => {
+      expect(calculator.add("2,1001")).toBe(2);
+      expect(calculator.add("//;\n1;2;1003;4;1006")).toBe(6);
+    });
   });
 
   describe("an invalid string input", () => {
