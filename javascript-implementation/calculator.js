@@ -17,7 +17,9 @@ class StringCalculator {
       throw new Error(`negatives not allowed: ${negativeNum.join(", ")}`);
     }
 
-    return numArr.reduce((acc, curValue) => acc + curValue, 0);
+    return numArr
+      .filter((num) => num <= 1000)
+      .reduce((acc, curValue) => acc + curValue, 0);
   }
 }
 
