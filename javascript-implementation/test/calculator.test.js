@@ -11,7 +11,11 @@ describe("A String calculator", () => {
     });
 
     test("should return the sum of two numbers separated by a comma", () => {
-      expect(calculator.add("1,2")).toBe(3);
+      expect(calculator.add("1,5")).toBe(6);
+    });
+
+    test("should return the sum of all the numbers present inside string seprated by comma", () => {
+      expect(calculator.add("1,3,4,5,2,6,8,9,1")).toBe(39);
     });
   });
 
