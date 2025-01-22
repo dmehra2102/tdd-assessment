@@ -10,10 +10,17 @@ export class Calculator {
       newString = parts[1];
     }
 
-    const numArray = input.split(delimiters).map(Number);
+    const numArray = newString.split(delimiters).map(Number);
     const negativeNum = numArray.filter((num) => num < 0);
+
     if (negativeNum.length > 0) {
       throw new Error(`negatives not allowed: ${negativeNum.join(", ")}`);
+    }
+
+    if (delimiters.test("*")) {
+      return numArray
+        .filter((num) => num <= 1000)
+        .reduce((acc, currVal) => acc * currVal, 1);
     }
 
     return numArray

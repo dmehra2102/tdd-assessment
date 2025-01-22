@@ -27,6 +27,7 @@ describe("A String calculator in typescript", () => {
       expect(calculator.add("//;\n1;2")).toBe(3);
       expect(calculator.add("//;\n1;2;3;4;6")).toBe(16);
       expect(calculator.add("//?\n1?2?3?4?6")).toBe(16);
+      expect(calculator.add("//*\n1*2*3*4*6")).toBe(144);
     });
 
     test("should ignore numbers bigger than 1000", () => {
